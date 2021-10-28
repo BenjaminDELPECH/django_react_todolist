@@ -11,7 +11,7 @@ class TrackedModel(models.Model):
 
 class TodoList(TrackedModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.TextField(max_length=255)
+    name = models.TextField(max_length=255, unique=True)
 
 
 class Todo(TrackedModel):
